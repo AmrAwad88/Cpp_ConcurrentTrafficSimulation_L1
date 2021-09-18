@@ -13,6 +13,9 @@ https://www.youtube.com/watch?v=OwiKpGYN9wI&ab_channel=Udacity
 
 **Task L1.2 :** In the Vehicle class, start a thread with the member function drive and the object this as the launch parameters. Also, add the created thread into the _thread vector of the parent class.\
 *Developer Comment: the tasks id are detributed in a sequential manner, which means that all the vehicle's indecies are occyping a certain range and emplace_back could be used to buffer all the threads in the _threads array.*
+*The following links are useful for this task:* \
+https://stackoverflow.com/questions/33191744/how-to-add-new-line-in-markdown-presentation \
+https://www.codegrepper.com/code-examples/cpp/c%2B%2B+start+a+thread+inside+a+class \
 
 **Task L1.3 :** Vary the number of simulated vehicles in main and use the top function on the terminal or the task manager of your system to observe the number of threads used by the simulation. \
 *Developer Comment: the maximum number of vehicles is controlled before creating the vehicles instances.* 
@@ -26,3 +29,8 @@ To compile and run the code, create a build directory and use cmake and make as 
 ../L1_Project/build# cmake .. \
 ../L1_Project/build# make \
 ../L1_Project/build# ./traffic_simulation
+
+### Appendix
+The following links are useful for this task:\
+https://stackoverflow.com/questions/33191744/how-to-add-new-line-in-markdown-presentation \
+https://www.codegrepper.com/code-examples/cpp/c%2B%2B+start+a+thread+inside+a+class \
