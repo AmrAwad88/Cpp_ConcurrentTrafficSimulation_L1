@@ -2,7 +2,7 @@
 This is a training for writing a concurrent program in C++
 
 This is the first lesson's excercise. The code explanation is provided by Prof. Andreas Haja in the Youtube links below:
-https://www.youtube.com/watch?v=iifZEu0ctxc&t=1s&ab_channel=Udacity
+https://www.youtube.com/watch?v=iifZEu0ctxc&t=1s&ab_channel=Udacity 
 https://www.youtube.com/watch?v=OwiKpGYN9wI&ab_channel=Udacity
 
 ## The Project's Description:
@@ -27,8 +27,8 @@ To run this code using a Udacity workspace, you will need to use the virtual des
 
 Once in the virtual desktop, to compile and run the code, create a build directory and use cmake and make as follows:
 
-../L1_Project# mkdir build
-../L1_Project# cd build
-../L1_Project/build# cmake ..
-../L1_Project/build# make
+../L1_Project# mkdir build 
+../L1_Project# cd build 
+../L1_Project/build# cmake .. 
+../L1_Project/build# make 
 ../L1_Project/build# ./traffic_simulation
