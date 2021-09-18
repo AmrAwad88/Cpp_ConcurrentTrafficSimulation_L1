@@ -29,8 +29,3 @@ To compile and run the code, create a build directory and use cmake and make as 
 ../L1_Project/build# cmake .. \
 ../L1_Project/build# make \
 ../L1_Project/build# ./traffic_simulation
-
-### Appendix
-The following links are useful for this task:\
-https://stackoverflow.com/questions/33191744/how-to-add-new-line-in-markdown-presentation \
-https://www.codegrepper.com/code-examples/cpp/c%2B%2B+start+a+thread+inside+a+class \
