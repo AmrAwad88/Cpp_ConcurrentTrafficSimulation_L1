@@ -20,10 +20,7 @@ https://www.youtube.com/watch?v=OwiKpGYN9wI&ab_channel=Udacity
 You can find these tasks in the project_tasks.txt within the workspace as well.
 
 ### Build Instructions
-To run this code using a Udacity workspace, you will need to use the virtual desktop. In the desktop you can use Terminator or the terminal in Visual Studio Code.
-
-Once in the virtual desktop, to compile and run the code, create a build directory and use cmake and make as follows:
-
+To compile and run the code, create a build directory and use cmake and make as follows:
 ../L1_Project# mkdir build \
 ../L1_Project# cd build \
 ../L1_Project/build# cmake .. \
