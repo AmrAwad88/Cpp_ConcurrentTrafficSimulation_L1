@@ -2,7 +2,7 @@
 This is a training for writing a concurrent program in C++
 
 This is the first lesson's excercise. The code explanation is provided by Prof. Andreas Haja in the Youtube links below:
-https://www.youtube.com/watch?v=iifZEu0ctxc&t=1s&ab_channel=Udacity 
+https://www.youtube.com/watch?v=iifZEu0ctxc&t=1s&ab_channel=Udacity  \
 https://www.youtube.com/watch?v=OwiKpGYN9wI&ab_channel=Udacity
 
 ## The Project's Description:
