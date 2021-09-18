@@ -12,7 +12,7 @@ https://www.youtube.com/watch?v=OwiKpGYN9wI&ab_channel=Udacity
 *Developer Comment: the _id counter is a unique object's counter and it could be used to identify the thread from the _threads array to be set as a barrier.*
 
 **Task L1.2 :** In the Vehicle class, start a thread with the member function drive and the object this as the launch parameters. Also, add the created thread into the _thread vector of the parent class.\
-*Developer Comment: the tasks id are detributed in a sequential manner, which means that all the vehicle's indecies are occyping a certain range and emplace_back could be used to buffer all the threads in the _threads array.*
+*Developer Comment: the tasks id are detributed in a sequential manner, which means that all the vehicle's indecies are occyping a certain range and emplace_back could be used to buffer all the threads in the _threads array.* \
 *The following links are useful for this task:* \
 https://stackoverflow.com/questions/33191744/how-to-add-new-line-in-markdown-presentation \
 https://www.codegrepper.com/code-examples/cpp/c%2B%2B+start+a+thread+inside+a+class \
