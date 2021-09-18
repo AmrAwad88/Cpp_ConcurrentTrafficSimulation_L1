@@ -12,7 +12,6 @@ Vehicle::Vehicle()
     _speed = 400; // m/s
 }
 
-
 void Vehicle::setCurrentDestination(std::shared_ptr<Intersection> destination)
 {
     // update destination
@@ -24,8 +23,9 @@ void Vehicle::setCurrentDestination(std::shared_ptr<Intersection> destination)
 
 void Vehicle::simulate()
 {
-    // Task L1.2 : Start a thread with the member function „drive“ and the object „this“ as the launch parameters. 
-    // Also, add the created thread into the _thread vector of the parent class. 
+    // Task L1.2 : Start a thread with the member function „drive“ and the object „this“ as the launch parameters.
+    // Also, add the created thread into the _thread vector of the parent class.
+    _threads.emplace_back(std::thread(&Vehicle::drive, this));
 }
 
 // virtual function which is executed in a thread
@@ -44,7 +44,7 @@ void Vehicle::drive()
     while (true)
     {
         // sleep at every iteration to reduce CPU usage
-        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1)); // it helps to reduce the CPU Load, as it ensures that the burning up of the processor does not happen
 
         // compute time difference to stop watch
         long timeSinceLastUpdate = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - lastUpdate).count();
@@ -98,9 +98,9 @@ void Vehicle::drive()
                     // this street is a dead-end, so drive back the same way
                     nextStreet = _currStreet;
                 }
-                
+
                 // pick the one intersection at which the vehicle is currently not
-                std::shared_ptr<Intersection> nextIntersection = nextStreet->getInIntersection()->getID() == _currDestination->getID() ? nextStreet->getOutIntersection() : nextStreet->getInIntersection(); 
+                std::shared_ptr<Intersection> nextIntersection = nextStreet->getInIntersection()->getID() == _currDestination->getID() ? nextStreet->getOutIntersection() : nextStreet->getInIntersection();
 
                 // assign new street and destination
                 this->setCurrentDestination(nextIntersection);

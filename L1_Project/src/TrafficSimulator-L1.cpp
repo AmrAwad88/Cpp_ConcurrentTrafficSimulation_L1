@@ -15,6 +15,7 @@ void createTrafficObjects(std::vector<std::shared_ptr<Street>> &streets, std::ve
 
     // init traffic objects
     int nIntersections = 6;
+    // Note: as there are 6 intersections, the _id from 0 to 5 are reserved for the intersections
     for (size_t ni = 0; ni < nIntersections; ni++)
     {
         intersections.push_back(std::make_shared<Intersection>());
@@ -30,11 +31,20 @@ void createTrafficObjects(std::vector<std::shared_ptr<Street>> &streets, std::ve
 
     // create streets and connect traffic objects
     int nStreets = 7;
+    // Note: as there are 7 streets, the _id from 6 to 12 are reserved for the streets
     for (size_t ns = 0; ns < nStreets; ns++)
     {
         streets.push_back(std::make_shared<Street>());
     }
-
+    // Legend:
+    // (n): Intersection #n
+    // [m]: Street #m
+    //             [3]              [2]
+    //    (4)<-------------(3)<-------------(2)
+    // [4] |                |  [6]           | [1]
+    //     |                |                |
+    //    (5)------------->(0)------------->(1)
+    //             [5]              [0]
     streets.at(0)->setInIntersection(intersections.at(0));
     streets.at(0)->setOutIntersection(intersections.at(1));
 
@@ -56,6 +66,9 @@ void createTrafficObjects(std::vector<std::shared_ptr<Street>> &streets, std::ve
     streets.at(6)->setInIntersection(intersections.at(0));
     streets.at(6)->setOutIntersection(intersections.at(3));
 
+    // Safety check to avoid having a number of vehicles more than the intersections or the streets
+    if (nVehicles > std::min(nIntersections, nStreets))
+        nVehicles = std::min(nIntersections, nStreets);
     // add vehicles to streets
     for (size_t nv = 0; nv < nVehicles; nv++)
     {
@@ -75,10 +88,11 @@ int main()
     std::vector<std::shared_ptr<Intersection>> intersections;
     std::vector<std::shared_ptr<Vehicle>> vehicles;
     std::string backgroundImg;
-  
-    // Task L1.3 : Vary the number of simulated vehicles and use the top function on the terminal or 
-    // the task manager of your system to observe the number of threads used by the simulation.   
-    int nVehicles = 4;
+
+    // Task L1.3 : Vary the number of simulated vehicles and use the top function on the terminal or
+    // the task manager of your system to observe the number of threads used by the simulation.
+    int nVehicles = 7;
+    // Note: as there are 6 Vehicles, the _id from 13 to 18 are reserved for the streets
     createTrafficObjects(streets, intersections, vehicles, backgroundImg, nVehicles);
 
     /* PART 2 : simulate traffic objects */
@@ -89,7 +103,7 @@ int main()
     });
 
     /* PART 3 : Launch visualization */
-    
+
     // add all objects into common vector
     std::vector<std::shared_ptr<TrafficObject>> trafficObjects;
     std::for_each(intersections.begin(), intersections.end(), [&trafficObjects](std::shared_ptr<Intersection> &intersection) {
